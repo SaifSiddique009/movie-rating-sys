@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class= "container">
+  <!-- Show movies name, rating, and year as a list from db -->
+  <h1 class= "text-center mt-2 mb-2">Movie List</h1>
+
+  <!-- Search form -->
+  <!-- <form action="/search" method="post">
+      <input type="text" id="movieName" name="movieName" placeholder="Search movies...">
+      <input type="submit" value="Search">
+  </form> -->
+  
+  <form class="d-flex" role="search" action="/search" method="post">
+    <input class="form-control me-2" type="search" placeholder="Search movies.." aria-label="Search">
+    <button class="btn btn-outline-primary" type="submit">Search</button>
+  </form>
+  
+  <!-- Movie list -->
+  </br>
+  <div>
+  {% for movie in movies %} 
+    <!-- List items will be added here -->
+    {% include 'movies.html' %}
+  {% endfor %}
+  </div>
+  </br>  
+  <!-- Add movie button -->
+  <div class="text-center">
+    <button class="btn btn-primary">Add Movie</button>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{movie['name']}} Details{% endblock %}
+
+{% block content %}
+<div class= "container">
+  <h4 class="text-center my-4">{{movie['name']}}</h4>
+  {% if 'genre' in movie %}
+  <div>
+    <b class="fw-semibold">Genre:</b> {{movie['genre']}}
+  </div>
+  {% endif %}
+
+  {% if 'rating' in movie %}
+  <div>
+    <b class="fw-semibold">Rating:</b> {{movie['rating']}}
+  </div>
+  {% endif %}
+  {% if 'release_date' in movie %}
+  <div>
+    <b class="fw-semibold">Release Date:</b> {{movie['release_date']}}
+  </div>
+  {% endif %}
+  {% if 'avg_rating' in movie %}
+  <div>
+    <b class="fw-semibold">Average Rating:</b> {{movie['avg_rating']}}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
