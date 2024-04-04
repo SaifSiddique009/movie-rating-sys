@@ -110,4 +110,3 @@ def update_info(movie, rating):
   result = load_full_movie_details(movie['id'])
   print("Updated Movie", result)
   return result
-    

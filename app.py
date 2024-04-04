@@ -98,7 +98,7 @@ def rate_movie(id):
             print("App.py", movie)
             update_movie = update_info(movie, rating_float)
             print("App.py-Updated:", update_movie)
-            return render_template('moviepage.html', movie=update_movie)
+            return redirect(url_for('show_movie', id=movie['id']))
         except ValueError:
             print("The rating cannot be converted to a float.")
     else:

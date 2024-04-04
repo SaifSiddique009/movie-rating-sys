@@ -27,7 +27,7 @@
   </div>
   {% endif %}
   
-  <form method="POST">
+  <form method="POST" action="/rate/{{movie['id']}}">
     <div class="form-group row g-3 align-items-center mt-2">
       <div class="col-auto fs-6 fw-semibold">
         <label for="add_rating">Give Rating</label>
@@ -46,10 +46,7 @@
         </span>
       </div>
     </div>
-    
-    <br />
-    <!-- <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button> -->
-    <a href="/movie/{{movie['id']}}" type="button" class="btn btn-primary" >Submit</a>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-</div>
+
 {% endblock %}
