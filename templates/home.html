@@ -6,15 +6,9 @@
 <div class= "container">
   <!-- Show movies name, rating, and year as a list from db -->
   <h1 class= "text-center mt-2 mb-2">Movie List</h1>
-
-  <!-- Search form -->
-  <!-- <form action="/search" method="post">
-      <input type="text" id="movieName" name="movieName" placeholder="Search movies...">
-      <input type="submit" value="Search">
-  </form> -->
   
-  <form class="d-flex" role="search" action="/search" method="post">
-    <input class="form-control me-2" type="search" placeholder="Search movies.." aria-label="Search">
+  <form class="d-flex" role="search" action="/home" method="post">
+    <input class="form-control me-2" type="search" name="search" placeholder="Search movies.." aria-label="Search">
     <button class="btn btn-outline-primary" type="submit">Search</button>
   </form>
   
@@ -29,7 +23,8 @@
   </br>  
   <!-- Add movie button -->
   <div class="text-center">
-    <button class="btn btn-primary">Add Movie</button>
+    <!-- <button class="btn btn-primary">Add Movie</button> -->
+    <a href="/add" type="button" class="btn btn-primary" >Add Movie</a>
   </div>
 </div>
 

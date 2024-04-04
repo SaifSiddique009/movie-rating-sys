@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}{{movie['name']}} Details{% endblock %}
+
+{% block content %}
+<div class= "container">
+  <h4 class="text-center my-4">{{movie['name']}}</h4>
+  {% if 'genre' in movie %}
+  <div>
+    <b class="fw-semibold">Genre:</b> {{movie['genre']}}
+  </div>
+  {% endif %}
+
+  {% if 'rating' in movie %}
+  <div>
+    <b class="fw-semibold">Rating:</b> {{movie['rating']}}
+  </div>
+  {% endif %}
+  {% if 'release_date' in movie %}
+  <div>
+    <b class="fw-semibold">Release Date:</b> {{movie['release_date']}}
+  </div>
+  {% endif %}
+  {% if 'avg_rating' in movie %}
+  <div>
+    <b class="fw-semibold">Average Rating:</b> {{movie['avg_rating']}}
+  </div>
+  {% endif %}
+  
+  <form method="POST">
+    <div class="form-group row g-3 align-items-center mt-2">
+      <div class="col-auto fs-6 fw-semibold">
+        <label for="add_rating">Give Rating</label>
+      </div>
+      <div class="col-auto">
+        <input
+          type="text"
+          class="form-control fs-6"
+          name="add_rating"
+          placeholder="Give your rating..."
+        />
+      </div>
+      <div class="col-auto">
+        <span id="passwordHelpInline" class="form-text">
+          Give a rating between 1-9.
+        </span>
+      </div>
+    </div>
+    
+    <br />
+    <!-- <button type="submit" class="btn btn-outline-primary btn-sm">Submit</button> -->
+    <a href="/movie/{{movie['id']}}" type="button" class="btn btn-primary" >Submit</a>
+  </form>
+</div>
+{% endblock %}

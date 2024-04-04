@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Add Movie{% endblock %}
+
+{% block content %}
+<div class= "container">
+  <form method="POST">
+    <h3 align="center" class="mt-4">Add movie information</h3>
+    <div class="form-group">
+      <label for="movie_name">Movie Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="movie_name"
+        placeholder="Enter movie name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input
+        type="text"
+        class="form-control"
+        name="genre"
+        placeholder="Enter Genre - Action, Comedy, Drama, Fantasy, Horror, Romance"
+      />
+    </div>
+    <div class="form-group">
+      <label for="rating">Movie rating</label>
+      <input
+        type="text"
+        class="form-control"
+        name="rating"
+        placeholder="Enter movie rating - G/PG/R/NC-17""
+      />
+    </div>
+    <div class="form-group">
+      <label for="release_date">Release Date</label>
+      <input
+        type="text"
+        class="form-control"
+        name="release_date"
+        placeholder="Enter movie release date - (format 2024-04-01)"
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
